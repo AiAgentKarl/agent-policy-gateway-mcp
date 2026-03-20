@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-policy-gateway-mcp"
+version = "0.1.0"
+description = "Compliance & guardrails for AI agents — PII filtering, audit logging, GDPR/AI Act checks, kill switch"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "AiAgentKarl"}
+]
+keywords = [
+    "mcp", "ai-agents", "compliance", "guardrails", "pii",
+    "gdpr", "eu-ai-act", "audit", "policy", "safety"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "mcp[cli]>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/agent-policy-gateway-mcp"
+Repository = "https://github.com/AiAgentKarl/agent-policy-gateway-mcp"
+Issues = "https://github.com/AiAgentKarl/agent-policy-gateway-mcp/issues"
+
+[project.scripts]
+policy-gateway-server = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
